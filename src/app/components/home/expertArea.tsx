@@ -1,3 +1,4 @@
+import { SiSqlite } from "react-icons/si";
 function SkillCard({ logoSrc, skillName }: SkillCardProps) {
     return (
         <div className="group text-center">

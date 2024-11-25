@@ -7,8 +7,8 @@ const MyResume: React.FC = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<"ENG" | "ID">("ENG");
 
     const resumeFileIds = {
-        ENG: "1ippP_-1SZ7x12Kpd2AllLWxVRSnuzjmI", // Ganti dengan ID file untuk versi English
-        ID: "1iAmWq1XctJYasiXU0rZE4EcumeEkgQp-", // Ganti dengan ID file untuk versi Indonesia
+        ENG: "1ippP_-1SZ7x12Kpd2AllLWxVRSnuzjmI", 
+        ID: "1iAmWq1XctJYasiXU0rZE4EcumeEkgQp-", 
       };
 
     const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
