@@ -10,7 +10,6 @@ const WorkExperience = ({ works }: WorkExperienceProps) => {
           Work Experience
         </h3>
         <div className="max-h-[200px] space-y-4 pb-6 pt-4">
-          {/* Loop hanya sekali untuk menampilkan pengalaman kerja */}
           {works.map((work, index) => (
             <div key={`work-${index}`} className="flex flex-col gap-1 md:flex-row md:gap-10">
               <p className="mt-1 text-sm font-medium text-muted dark:text-light/70">
@@ -18,7 +17,7 @@ const WorkExperience = ({ works }: WorkExperienceProps) => {
               </p>
               <div className="flex items-center gap-3">
                 <div className="grid h-8 w-8 shrink-0 place-content-center rounded-lg bg-secondary dark:bg-dark-2">
-                  <ImageComponent src={work.imageCompany} alt={work.company} width={20} height={20} className="h-5 w-5" />
+                  <work.Icon className="h-5 w-5 text-dark dark:text-light" /> {/* Ikon perusahaan */}
                 </div>
                 <div>
                   <h6 className="text-base font-semibold text-dark dark:text-light/70">
@@ -41,3 +40,4 @@ const WorkExperience = ({ works }: WorkExperienceProps) => {
 };
 
 export default WorkExperience;
+

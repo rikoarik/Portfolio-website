@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./styles/global.css";
-import { Swiper } from "swiper/react";
 import { DarkModeProvider } from './context/darkmodecontext';
 import 'swiper/css';
 import { Header } from "./components/header";

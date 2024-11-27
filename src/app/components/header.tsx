@@ -42,9 +42,9 @@ export const Header = () => {
                     <ul className="hidden lg:flex gap-4">
                         <li>
                             <Link
-                                href="/home"
+                                href="/"
                                 className={`px-3 py-2 rounded-lg text-base font-medium ${
-                                    pathname === "/home"
+                                    pathname === "/"
                                         ? "text-primary bg-gray-100 dark:bg-dark-2"
                                         : "text-muted hover:text-dark dark:hover:text-white"
                                 }`}
@@ -136,9 +136,9 @@ export const Header = () => {
                         <ul className="rounded-lg flex flex-col gap-4 p-4 bg-white dark:bg-black">
                             <li>
                                 <Link
-                                    href="/home"
+                                    href="/"
                                     className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                                        pathname === "/home"
+                                        pathname === "/"
                                             ? "text-primary bg-gray-100 dark:bg-dark-2"
                                             : "text-muted hover:text-dark dark:hover:text-white"
                                     }`}
