@@ -18,7 +18,6 @@ export const Header = () => {
         <header className="sticky top-0 z-50">
             <div className="rounded-lg bg-white dark:bg-black shadow-md dark:shadow-dark">
                 <div className="rounded-lg flex items-center justify-between p-3">
-               
                     <Link
                         href="/"
                         className="inline-flex items-center gap-3 text-2xl font-semibold text-dark dark:text-white"
@@ -110,7 +109,6 @@ export const Header = () => {
                         {darkMode ? "🌙" : "☀️"}
                     </button>
 
-    
                     <button
                         type="button"
                         className="lg:hidden"
@@ -206,5 +204,6 @@ export const Header = () => {
         </header>
     );
 };
+
 
 
