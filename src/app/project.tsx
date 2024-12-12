@@ -10,7 +10,7 @@
 
      ],
      techStack: ["Kotlin", "MVVM", "Retrofit", "RESTful API", "Face Recognition SDK"],
-     githubLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
+     githubLink: "https://bujpmahawangsa.com/download/",
    },
    {
      id: 2,
@@ -73,7 +73,7 @@
                            rel="noopener noreferrer"
                            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                          >
-                           View on Github
+                           Download Apk
                          </a>
                        )}
                      </div>
@@ -100,7 +100,7 @@
                            rel="noopener noreferrer"
                            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                          >
-                           View on Github
+                           Download Apk
                          </a>
                        )}
                      </div>
