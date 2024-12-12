@@ -4,5 +4,5 @@ interface Project {
   description: string;
   images: string[];
   techStack: string[];
-  playStoreLink?: string;
+  githubLink?: string;
 }

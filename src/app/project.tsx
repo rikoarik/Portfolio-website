@@ -4,29 +4,31 @@
  const androidProjects: Project[] = [
    {
      id: 1,
-     title: "Weather App",
-     description: "A simple weather application that provides real-time weather information for any location.",
-     images: ["/images/weather-app-1.png", "/images/weather-app-2.png", "/images/weather-app-3.png"],
-     techStack: ["Kotlin", "MVVM", "Retrofit", "Room"],
-     playStoreLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
+     title: "HRM Apps",
+     description: "An HRM application for PT. Emahawangsa, designed to streamline HR processes for staff and personnel. Features include face recognition for selfie attendance, leave application, and overtime requests.",
+     images: ["/assets/images/hrm/hrm-1.jpg",
+
+     ],
+     techStack: ["Kotlin", "MVVM", "Retrofit", "RESTful API", "Face Recognition SDK"],
+     githubLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
    },
    {
      id: 2,
-     title: "Weather App",
-     description: "A simple weather application that provides real-time weather information for any location.",
-     images: ["/images/weather-app-1.png", "/images/weather-app-2.png", "/images/weather-app-3.png"],
-     techStack: ["Kotlin", "MVVM", "Retrofit", "Room"],
-     playStoreLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
+     title: "Explore Bojonegoro",
+     description: "A tourism application showcasing the beauty of Bojonegoro, featuring information on attractions, cultural heritage, and local events to boost regional tourism.",
+     images: ["/assets/images/explorebojonegoro/explore-1.jpg",  
+      "/assets/images/explorebojonegoro/explore-2.jpg",
+      "/assets/images/explorebojonegoro/explore-3.jpg",
+      "/assets/images/explorebojonegoro/explore-4.jpg",
+      "/assets/images/explorebojonegoro/explore-5.jpg",
+
+     ],
+     techStack: ["Kotlin", "Retrofit", "Firebase", "Weather API", "Mapbox API"],
+     githubLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
    },
-   {
-     id: 3,
-     title: "Weather App",
-     description: "A simple weather application that provides real-time weather information for any location.",
-     images: ["/images/weather-app-1.png", "/images/weather-app-2.png", "/images/weather-app-3.png"],
-     techStack: ["Kotlin", "MVVM", "Retrofit", "Room"],
-     playStoreLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
-   },
- 
+   
+  
+   
  ];
 
  const myProjects: React.FC = () => {
@@ -40,7 +42,7 @@
                Explore our Android development projects that showcase creativity, innovation, and technical expertise.
              </p>
            </div>
-           <div className="space-y-16">
+           <div className="w-full h-full">
              {androidProjects.map((project, index) => (
                <div
                  key={project.id}
@@ -48,19 +50,61 @@
                >
                  {index % 2 === 0 ? (
                    <>
-                     <div className="aspect-w-16 aspect-h-9 lg:col-start-1">
+                     <div className="aspect-h-9 lg:col-start-1">
                        <ClientImageSlider images={project.images} title={project.title} />
                      </div>
                      <div className="lg:col-start-2">
-                       {/* ... (project details) ... */}
+                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                       <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                       <div className="mb-4">
+                         <h4 className="font-semibold mb-2">Tech Stack:</h4>
+                         <div className="flex flex-wrap gap-2">
+                           {project.techStack.map((tech, techIndex) => (
+                             <span key={techIndex} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-md text-sm">
+                               {tech}
+                             </span>
+                           ))}
+                         </div>
+                       </div>
+                       {project.githubLink && (
+                         <a
+                           href={project.githubLink}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                         >
+                           View on Github
+                         </a>
+                       )}
                      </div>
                    </>
                  ) : (
                    <>
                      <div className="lg:col-start-1">
-                       {/* ... (project details) ... */}
+                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                       <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                       <div className="mb-4">
+                         <h4 className="font-semibold mb-2">Tech Stack:</h4>
+                         <div className="flex flex-wrap gap-2">
+                           {project.techStack.map((tech, techIndex) => (
+                             <span key={techIndex} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-md text-sm">
+                               {tech}
+                             </span>
+                           ))}
+                         </div>
+                       </div>
+                       {project.githubLink && (
+                         <a
+                           href={project.githubLink}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                         >
+                           View on Github
+                         </a>
+                       )}
                      </div>
-                     <div className="aspect-w-16 aspect-h-9 lg:col-start-2">
+                     <div className="aspect-h-9 lg:col-start-2">
                        <ClientImageSlider images={project.images} title={project.title} />
                      </div>
                    </>
@@ -75,4 +119,3 @@
  };
 
  export default myProjects;
-
