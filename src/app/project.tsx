@@ -1,124 +1,107 @@
- import React from "react";
- import ClientImageSlider from './components/ClientImageSlider';
+import React from "react";
+import ClientImageSlider from './components/ClientImageSlider';
 
- const androidProjects: Project[] = [
-   {
-     id: 1,
-     title: "HRM Apps",
-     description: "An HRM application for PT. Emahawangsa, designed to streamline HR processes for staff and personnel. Features include face recognition for selfie attendance, leave application, and overtime requests.",
-     images: ["/assets/images/hrm/hrm-1.jpg",
-
-     ],
-     techStack: ["Kotlin", "MVVM", "Retrofit", "RESTful API", "Face Recognition SDK"],
-     githubLink: "https://bujpmahawangsa.com/download/",
-   },
-   {
-     id: 2,
-     title: "Explore Bojonegoro",
-     description: "A tourism application showcasing the beauty of Bojonegoro, featuring information on attractions, cultural heritage, and local events to boost regional tourism.",
-     images: ["/assets/images/explorebojonegoro/explore-1.jpg",  
+const androidProjects: Project[] = [
+  {
+    id: 1,
+    title: "HRM Apps",
+    description: `
+      HRM Apps is a comprehensive Human Resource Management application developed for PT. Emahawangsa. 
+      It is designed to simplify HR processes and improve efficiency across the organization. 
+      Key features include:
+      - A state-of-the-art face recognition system for accurate and secure selfie-based attendance.
+      - An intuitive leave management system that allows employees to easily submit and track leave applications.
+      - A seamless overtime request feature that helps employees and managers streamline approvals.
+      This application is built with a strong emphasis on security, user experience, and scalability, ensuring that it meets the dynamic needs of modern organizations.`,
+    images: ["/assets/images/hrm/hrm-1.jpg"],
+    techStack: ["Kotlin", "MVVM", "Retrofit", "RESTful API", "Face Recognition SDK"],
+    githubLink: "https://bujpmahawangsa.com/download/",
+  },
+  {
+    id: 2,
+    title: "Explore Bojonegoro",
+    description: `
+      Explore Bojonegoro is a tourism application that aims to showcase the hidden gems of Bojonegoro to a broader audience. 
+      This app is your personal guide to explore:
+      - Stunning tourist destinations, including natural wonders, cultural heritage sites, and more.
+      - Comprehensive event listings to keep locals and visitors informed about ongoing festivals and activities.
+      - Local cuisine and specialties, providing a taste of Bojonegoro's vibrant culinary culture.
+      This app leverages advanced APIs such as Mapbox for navigation and Weather API for real-time weather updates, ensuring a seamless and enriched travel experience.`,
+    images: [
+      "/assets/images/explorebojonegoro/explore-1.jpg",  
       "/assets/images/explorebojonegoro/explore-2.jpg",
-      "/assets/images/explorebojonegoro/explore-3.jpg",
-      "/assets/images/explorebojonegoro/explore-4.jpg",
-      "/assets/images/explorebojonegoro/explore-5.jpg",
+    ],
+    techStack: ["Kotlin", "Retrofit", "Firebase", "Weather API", "Mapbox API"],
+    githubLink: "https://drive.google.com/file/d/12G5ILc3uSPd0rlM_Z87_IkXDkD7m5Xg3/view?usp=drivesdk",
+  },
+];
 
-     ],
-     techStack: ["Kotlin", "Retrofit", "Firebase", "Weather API", "Mapbox API"],
-     githubLink: "https://drive.google.com/file/d/12G5ILc3uSPd0rlM_Z87_IkXDkD7m5Xg3/view?usp=drivesdk",
-   },
-   
-  
-   
- ];
+const MyProjects: React.FC = () => {
+  return (
+    <div className="rounded-2xl bg-white shadow-md dark:bg-black dark:shadow-lg p-6 lg:p-12">
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-2">
+          My Recent Projects
+        </h2>
+        <p className="text-neutral-500 dark:text-neutral-300">
+          Explore Android projects showcasing creativity, innovation, and technical expertise.
+        </p>
+      </div>
 
- const myProjects: React.FC = () => {
-   return (
-     <>
-       <div className="rounded-2xl bg-white shadow dark:bg-black dark:shadow-dark">
-  <div className="rounded-full ms-8 mr-8 px-4 xl:px-0 py-6 mx-auto">
-    <div className="max-w-3xl mb-8 lg:mb-12">
-      <h2 className="font-semibold text-2xl md:text-4xl md:leading-tight">
-        My Recent Projects
-      </h2>
-      <p className="mt-1 text-neutral-400">
-        Explore our Android development projects that showcase creativity, innovation, and technical expertise.
-      </p>
-    </div>
-    <div className="w-full h-full">
-      {androidProjects.map((project, index) => (
-        <div
-          key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-8"
-        >
-          {index % 2 === 0 ? (
-            <>
-              <div className="aspect-h-9 lg:col-start-1">
-                <ClientImageSlider images={project.images} title={project.title} />
-              </div>
-              <div className="lg:col-start-2">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                <div className="mb-4">
-                  <h4 className="font-semibold mb-2">Tech Stack:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-md text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+      {/* Projects */}
+      <div className="space-y-12">
+        {androidProjects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`grid gap-6 items-center ${
+              index % 2 === 0 ? "lg:grid-cols-2" : "lg:grid-cols-2 lg:flex-row-reverse"
+            }`}
+          >
+            {/* Image Section */}
+            <div className="relative">
+              <ClientImageSlider
+                images={project.images}
+                title={project.title}
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-50 lg:opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            {/* Description Section */}
+            <div>
+              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {project.description}
+              </p>
+              <div className="mb-4">
+                <h4 className="font-semibold mb-2">Tech Stack:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-                  >
-                    Download Apk
-                  </a>
-                )}
               </div>
-            </>
-          ) : (
-            <>
-              <div className="lg:col-start-1">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                <div className="mb-4">
-                  <h4 className="font-semibold mb-2">Tech Stack:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-md text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-                  >
-                    Download Apk
-                  </a>
-                )}
-              </div>
-              <div className="aspect-h-9 lg:col-start-2">
-                <ClientImageSlider images={project.images} title={project.title} />
-              </div>
-            </>
-          )}
-        </div>
-      ))}
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-2 px-4 rounded transition-shadow duration-300 hover:shadow-lg"
+                >
+                  Download APK
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-</div>
+  );
+};
 
-     </>
-   );
- };
-
- export default myProjects;
+export default MyProjects;
