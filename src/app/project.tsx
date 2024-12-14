@@ -56,50 +56,54 @@ const MyProjects: React.FC = () => {
       <div className="space-y-16">
         {androidProjects.map((project, index) => (
           <div
-            key={project.id}
-            className={`flex flex-col gap-8 lg:gap-12 ${
-              index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-            } items-center`}
-          >
-            {/* Image Section */}
-            <div className="flex-1 w-full max-w-md lg:max-w-full">
-              <ClientImageSlider
-                images={project.images}
-                title={project.title}
+          key={project.id}
+          className={`flex flex-col gap-8 lg:gap-12 ${
+            index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+          } items-center`}
+        >
+          {/* Image Section */}
+          <div className="flex-1 w-full">
+            <div className="relative w-full aspect-w-16 aspect-h-9">
+              <img
+                src={project.images[0]} // Ambil gambar pertama sebagai contoh
+                alt={project.title}
+                className="w-full h-full object-cover rounded-lg shadow-md"
               />
             </div>
-
-            {/* Description Section */}
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 whitespace-pre-line">
-                {project.description}
-              </p>
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2">Tech Stack:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-2 px-4 rounded transition-shadow duration-300 hover:shadow-lg"
-                >
-                  Download APK
-                </a>
-              )}
-            </div>
           </div>
+        
+          {/* Description Section */}
+          <div className="flex-1 px-4">
+            <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4 whitespace-pre-line">
+              {project.description}
+            </p>
+            <div className="mb-4">
+              <h4 className="font-semibold mb-2">Tech Stack:</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-2 px-4 rounded transition-shadow duration-300 hover:shadow-lg"
+              >
+                Download APK
+              </a>
+            )}
+          </div>
+        </div>
+        
         ))}
       </div>
     </div>
