@@ -27,7 +27,7 @@ export default function ProfileCard({ profiles }: ProfileProps) {
                     alt={profiles.image}
                     width={500}
                     height={500}
-                    className="object-cover object-center w-full max-w-xs rounded-full"
+                    className="max-w-xs sm:max-w-md"
                 />
             </div>
 

@@ -3,7 +3,7 @@ import { ImageProps } from '@/app/interfaces/imageprops';
 
 const ImageComponent = ({ src, alt, className, quality = 100 }: ImageProps) => {
     return (
-        <div className={`relative ${className}`}>
+        <div className={`relative w-full h-full flex items-center justify-center ${className}`}>
             <Image
                 src={src}
                 alt={alt}
@@ -11,8 +11,7 @@ const ImageComponent = ({ src, alt, className, quality = 100 }: ImageProps) => {
                 width={500}
                 height={500}
                 priority={true}
-                className="rounded-lg object-cover"
-                style={{ width: 'auto', height: '100%' }}
+                className="rounded-lg object-cover w-auto h-full"
             />
         </div>
     );
