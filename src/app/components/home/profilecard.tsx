@@ -21,10 +21,16 @@ export default function ProfileCard({ profiles }: ProfileProps) {
     }, []);
     return (
         <div className="rounded-2xl bg-white p-6 shadow dark:bg-black dark:shadow-dark">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg bg-secondary pt-4 text-center dark:bg-dark-2">
-                <ImageComponent src={profiles.image} alt={profiles.image} width={500} height={500} className="inline-block scale-110 object-cover object-center w-80"
+            <div className="aspect-[4/3] overflow-hidden rounded-lg bg-secondary flex items-center justify-center dark:bg-dark-2">
+                <ImageComponent
+                    src={profiles.image}
+                    alt={profiles.image}
+                    width={500}
+                    height={500}
+                    className="object-cover object-center w-full max-w-xs rounded-full"
                 />
             </div>
+
 
             <div className="mt-6">
                 <h3 className="text-2xl font-semibold dark:text-light">{profiles.name} 👋</h3>
