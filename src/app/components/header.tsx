@@ -87,7 +87,7 @@ export const Header = () => {
                                 Resume
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link
                                 href="/contact"
                                 className={`px-3 py-2 rounded-lg text-base font-medium ${
@@ -98,7 +98,7 @@ export const Header = () => {
                             >
                                 Contact
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
 
                     <button
@@ -184,7 +184,7 @@ export const Header = () => {
                                     Resume
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link
                                     href="/contact"
                                     className={`block px-3 py-2 rounded-lg text-base font-medium ${
@@ -196,7 +196,7 @@ export const Header = () => {
                                 >
                                     Contact
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 )}

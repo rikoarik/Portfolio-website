@@ -24,7 +24,7 @@
 
      ],
      techStack: ["Kotlin", "Retrofit", "Firebase", "Weather API", "Mapbox API"],
-     githubLink: "https://play.google.com/store/apps/details?id=com.example.weatherapp",
+     githubLink: "https://drive.google.com/file/d/12G5ILc3uSPd0rlM_Z87_IkXDkD7m5Xg3/view?usp=drivesdk",
    },
    
   

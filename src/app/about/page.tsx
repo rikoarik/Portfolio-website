@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="rounded-2xl bg-white shadow-lg dark:bg-gray-900 dark:shadow-dark p-8">
+    <div className="rounded-2xl bg-white shadow dark:bg-black dark:shadow-dark p-8">
       <h1 className="text-4xl font-bold mb-8 text-center dark:text-white">About Me</h1>
 
       <div className="space-y-12">
