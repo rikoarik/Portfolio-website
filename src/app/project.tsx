@@ -30,6 +30,9 @@ const androidProjects: Project[] = [
     images: [
       "/assets/images/explorebojonegoro/explore-1.jpg",  
       "/assets/images/explorebojonegoro/explore-2.jpg",
+      "/assets/images/explorebojonegoro/explore-3.jpg",
+      "/assets/images/explorebojonegoro/explore-4.jpg",
+      "/assets/images/explorebojonegoro/explore-5.jpg",
     ],
     techStack: ["Kotlin", "Retrofit", "Firebase", "Weather API", "Mapbox API"],
     githubLink: "https://drive.google.com/file/d/12G5ILc3uSPd0rlM_Z87_IkXDkD7m5Xg3/view?usp=drivesdk",
@@ -40,8 +43,8 @@ const MyProjects: React.FC = () => {
   return (
     <div className="rounded-2xl bg-white shadow-md dark:bg-black dark:shadow-lg p-6 lg:p-12">
       {/* Header */}
-      <div className="text-center mb-8">
-        <h2 className="text-3xl lg:text-4xl font-semibold mb-2">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
           My Recent Projects
         </h2>
         <p className="text-neutral-500 dark:text-neutral-300">
@@ -50,30 +53,29 @@ const MyProjects: React.FC = () => {
       </div>
 
       {/* Projects */}
-      <div className="space-y-12">
+      <div className="space-y-16">
         {androidProjects.map((project, index) => (
           <div
             key={project.id}
-            className={`grid gap-6 items-center ${
+            className={`grid gap-10 items-center ${
               index % 2 === 0 ? "lg:grid-cols-2" : "lg:grid-cols-2 lg:flex-row-reverse"
             }`}
           >
             {/* Image Section */}
-            <div className="relative">
+            <div className="relative aspect-w-16 aspect-h-9">
               <ClientImageSlider
                 images={project.images}
                 title={project.title}
               />
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-50 lg:opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
             </div>
 
             {/* Description Section */}
-            <div>
-              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
                 {project.description}
               </p>
-              <div className="mb-4">
+              <div>
                 <h4 className="font-semibold mb-2">Tech Stack:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, techIndex) => (
