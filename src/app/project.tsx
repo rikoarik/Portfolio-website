@@ -43,8 +43,8 @@ const MyProjects: React.FC = () => {
   return (
     <div className="rounded-2xl bg-white shadow-md dark:bg-black dark:shadow-lg p-6 lg:p-12">
       {/* Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-2">
           My Recent Projects
         </h2>
         <p className="text-neutral-500 dark:text-neutral-300">
@@ -57,12 +57,12 @@ const MyProjects: React.FC = () => {
         {androidProjects.map((project, index) => (
           <div
             key={project.id}
-            className={`grid gap-10 items-center ${
-              index % 2 === 0 ? "lg:grid-cols-2" : "lg:grid-cols-2 lg:flex-row-reverse"
-            }`}
+            className={`flex flex-col gap-8 lg:gap-12 ${
+              index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+            } items-center`}
           >
             {/* Image Section */}
-            <div className="relative aspect-w-16 aspect-h-9">
+            <div className="flex-1 w-full max-w-md lg:max-w-full">
               <ClientImageSlider
                 images={project.images}
                 title={project.title}
@@ -70,12 +70,12 @@ const MyProjects: React.FC = () => {
             </div>
 
             {/* Description Section */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 whitespace-pre-line">
                 {project.description}
               </p>
-              <div>
+              <div className="mb-4">
                 <h4 className="font-semibold mb-2">Tech Stack:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, techIndex) => (
