@@ -5,11 +5,14 @@ import RecentProject from "./components/home/recentProject";
 import { InterfaceProfile } from "./interfaces/profile";
 import { InterfaceWorkExperience } from "./interfaces/work";
 import { FaBuilding } from "react-icons/fa";
+import { Analytics } from "@vercel/analytics/react"
+import type { AppProps } from 'next/app';
 
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_APP_NAME || "My Site"} | Home`,
   description: "My Portfolio",
 };
+
 
 const profiles: InterfaceProfile = {
   name: "Ari Riko Prasetya",
