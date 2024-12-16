@@ -65,7 +65,7 @@ const MyProjects: React.FC = () => {
           <div className="flex-1 w-full">
             <div className="relative w-full aspect-w-16 aspect-h-9">
               <img
-                src={project.images[0]} // Ambil gambar pertama sebagai contoh
+                src={project.images} // Ambil gambar pertama sebagai contoh
                 alt={project.title}
                 className="w-full h-full object-cover rounded-lg shadow-md"
               />
