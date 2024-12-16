@@ -184,19 +184,16 @@ export const Header = () => {
                                     Resume
                                 </Link>
                             </li>
-                            {/* <li>
-                                <Link
-                                    href="/contact"
-                                    className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                                        pathname === "/contact" 
-                                            ? "text-primary bg-gray-100 dark:bg-dark-2"
-                                            : "text-muted hover:text-dark dark:hover:text-white"
-                                    }`}
-                                    onClick={() => setMobileMenuOpen(false)}
+                            
+                            <li>
+                                <button
+                                    type="button"
+                                    onClick={toggleDarkMode}
+                                    className="px-3 py-2 rounded-lg text-base font-medium text-muted hover:text-dark dark:hover:text-white"
                                 >
-                                    Contact
-                                </Link>
-                            </li> */}
+                                    {darkMode ? "🌙 Dark Mode" : "☀️ Light Mode"}
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 )}
