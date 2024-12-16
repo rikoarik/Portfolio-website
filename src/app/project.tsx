@@ -64,11 +64,14 @@ const MyProjects: React.FC = () => {
           {/* Image Section */}
           <div className="flex-1 w-full">
             <div className="relative w-full aspect-w-16 aspect-h-9">
-              <img
-                src={project.images[0]} // Ambil gambar pertama sebagai contoh
-                alt={project.title}
-                className="w-full h-full object-cover rounded-lg shadow-md"
-              />
+            {project.images && project.images.length > 0 ? (
+                <ClientImageSlider images={project.images} 
+                  title={project.title}/>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md">
+                  <p className="text-gray-500 dark:text-gray-400">No images available</p>
+                </div>
+              )}
             </div>
             {/* Description Section */}
             <div className="flex-1 px-4">
