@@ -52,62 +52,65 @@ const MyProjects: React.FC = () => {
         </p>
       </div>
 
-      {/* Projects */}
       <div className="space-y-16">
-        {androidProjects.map((project, index) => (
-          <div
-              key={project.id}
-              className={`flex flex-col gap-8 lg:gap-12 lg:items-center transition-all duration-500 ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-              }`}
-            >
-        
-            {/* Image Section */}
-            <div className="flex-1 w-full">
-              <div className="relative w-full aspect-w-16 aspect-h-9">
-                {project.images && project.images.length > 0 ? (
-                  <ClientImageSlider images={project.images} title={project.title} />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md">
-                    <p className="text-gray-500 dark:text-gray-400">No images available</p>
-                  </div>
-                )}
-              </div>
-              
-              {/* Description Section */}
-              <div className="flex-1 px-4">
-                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 whitespace-pre-line">
-                  {project.description}
-                </p>
-                <div className="mb-4">
-                  <h4 className="font-semibold mb-2">Tech Stack:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-2 px-4 rounded transition-shadow duration-300 hover:shadow-lg"
-                  >
-                    Download APK
-                  </a>
-                )}
-              </div>
+  {androidProjects.map((project, index) => (
+    <div
+      key={project.id}
+      className={`flex flex-col-reverse lg:flex-row ${
+        index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+      } gap-8 lg:gap-12 items-center`}
+    >
+      {/* Image Section */}
+      <div className="flex-1 w-600flex-1 w-full max-w-[500px]">
+        <div className="relative w-full h-auto">
+          {project.images && project.images.length > 0 ? (
+            <ClientImageSlider 
+              images={project.images}
+              title={project.title}
+            />
+          ) : (
+            <div className="w-full h-[250px] flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md">
+              <p className="text-gray-500 dark:text-gray-400">No images available</p>
             </div>
-          </div>
-        ))}
+          )}
+        </div>
       </div>
+
+
+      {/* Description Section */}
+      <div className="flex-1 px-4">
+        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4 whitespace-pre-line">
+          {project.description}
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold mb-2">Tech Stack:</h4>
+          <div className="flex flex-wrap gap-2">
+            {project.techStack.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+        {project.githubLink && (
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-2 px-4 rounded transition-shadow duration-300 hover:shadow-lg"
+          >
+            Download APK
+          </a>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
     </div>
   );
 };
