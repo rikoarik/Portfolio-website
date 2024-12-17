@@ -56,11 +56,12 @@ const MyProjects: React.FC = () => {
       <div className="space-y-16">
         {androidProjects.map((project, index) => (
           <div
-            key={project.id}
-            className={`flex flex-col gap-8 lg:gap-12 ${
-              index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-            } items-center`}
-          >
+              key={project.id}
+              className={`flex flex-col gap-8 lg:gap-12 lg:items-center transition-all duration-500 ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+              }`}
+            >
+        
             {/* Image Section */}
             <div className="flex-1 w-full">
               <div className="relative w-full aspect-w-16 aspect-h-9">
@@ -72,6 +73,7 @@ const MyProjects: React.FC = () => {
                   </div>
                 )}
               </div>
+              
               {/* Description Section */}
               <div className="flex-1 px-4">
                 <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
