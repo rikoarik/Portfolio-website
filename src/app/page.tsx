@@ -7,6 +7,7 @@ import { InterfaceWorkExperience } from "./interfaces/work";
 import { FaBuilding } from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react"
 import type { AppProps } from 'next/app';
+import { FaBuildingUn } from "react-icons/fa6";
 
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_APP_NAME || "My Site"} | Home`,
@@ -24,12 +25,20 @@ const profiles: InterfaceProfile = {
 
 const works: InterfaceWorkExperience[] = [
   {
-    startDate: "2022",
-    endDate: "2024",
-    company: "Freelance",
-    position: "Independent Developer",
+    startDate: "Mey 2022",
+    endDate: "Today",
+    company: "Freelance(self-employed)",
+    position: "Android Developer",
     Icon: FaBuilding,
   },
+  {
+    startDate: "Jan 2025",
+    endDate: "Today",
+    company: "PT. FOKUS TEKNOLOGI PEMBAYARAN",
+    position: "Mobile Developer",
+    Icon: FaBuildingUn,
+  },
+
 ];
 
 export default function Home() {
