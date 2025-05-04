@@ -39,7 +39,7 @@ export default function ProfileCard({ profiles }: ProfileProps) {
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                    <a href="https://wa.me/6282139138300" className="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-primary px-6 py-4 font-medium text-white transition hover:bg-green-600 focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:bg-green-600 dark:hover:bg-green-700">
+                    <a href="https://wa.me/6285158880779" className="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-primary px-6 py-4 font-medium text-white transition hover:bg-green-600 focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:bg-green-600 dark:hover:bg-green-700">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="h-6 w-6">
                             <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Zm10 3a2 2 0 0 1 2 2m-2-6a6 6 0 0 1 6 6" />
                         </svg>
