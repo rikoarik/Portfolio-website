@@ -7,8 +7,8 @@ const MyResume: React.FC = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<"ENG" | "ID">("ENG");
 
     const resumeFileIds = {
-        ENG: "1ippP_-1SZ7x12Kpd2AllLWxVRSnuzjmI", 
-        ID: "1iAmWq1XctJYasiXU0rZE4EcumeEkgQp-", 
+        ENG: "1SX61Ghwb2HZvSVUCuOOWRy731I_DXqrR", 
+        ID: "1qYfm3yYRzB85WhLaeuqa-v3-ut4GhfLO", 
       };
 
     const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
