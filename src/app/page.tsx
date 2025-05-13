@@ -26,14 +26,14 @@ const profiles: InterfaceProfile = {
 const works: InterfaceWorkExperience[] = [
   {
     startDate: "Mey 2022",
-    endDate: "Today",
+    endDate: "Present",
     company: "Freelance(self-employed)",
     position: "Android Developer",
     Icon: FaBuilding,
   },
   {
     startDate: "Jan 2025",
-    endDate: "Today",
+    endDate: "Present",
     company: "PT. FOKUS TEKNOLOGI PEMBAYARAN",
     position: "Mobile Developer",
     Icon: FaBuildingUn,
